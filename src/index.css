@@ -45,6 +45,19 @@ html {
   animation: page-reveal 600ms ease-out both;
 }
 
+.navbar-logo {
+  background-color:none;
+width:250px;
+height:80px
+}
+
+.navbar-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 @keyframes page-reveal {
   from {
     opacity: 0;

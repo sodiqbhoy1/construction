@@ -1,14 +1,17 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import {
+  FaAppStore,
   FaCamera,
   FaCheckCircle,
   FaClock,
   FaMapMarkedAlt,
+  FaGooglePlay,
   FaShieldAlt,
   FaTools,
 } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
+import { Link } from 'react-router'
 
 const highlights = [
   {
@@ -97,19 +100,19 @@ const Homepage = () => {
               </p>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#contact"
+                <Link
+                  to="/#contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-accent-cta px-6 py-3 text-sm font-semibold text-brand-white transition-colors hover:bg-accent-hover"
                 >
                   Start report
                   <FiArrowRight />
-                </a>
-                <a
-                  href="#how-it-works"
+                </Link>
+                <Link
+                  to="/#how-it-works"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/20 px-6 py-3 text-sm font-semibold text-text-main transition-colors hover:border-primary hover:text-primary"
                 >
                   How it works
-                </a>
+                </Link>
               </div>
 
               <div className="hidden gap-3 pt-2 sm:grid sm:grid-cols-3 sm:gap-4">
@@ -158,6 +161,7 @@ const Homepage = () => {
           </div>
         </section>
 
+
         <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
           <div className="grid gap-6 border border-primary/15 bg-bg-surface p-6 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
@@ -171,6 +175,8 @@ const Homepage = () => {
                 From submission to completion, the flow stays simple for everyone involved.
               </p>
             </div>
+
+
 
             <div className="grid gap-4">
               {steps.map((step, index) => (
@@ -187,7 +193,7 @@ const Homepage = () => {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8 lg:py-8">
+        <section id="services" className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8 lg:py-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="border border-primary/15 bg-bg-surface p-6">
               <h2 className="text-2xl font-black tracking-tight text-text-main sm:text-3xl">
@@ -316,14 +322,88 @@ const Homepage = () => {
                   <div className="rounded-md bg-accent-cta/10 px-4 py-3 text-accent-cta">Upload photos</div>
                   <div className="rounded-md bg-status-success/10 px-4 py-3 text-status-success">Track repair status</div>
                 </div>
-                <a
-                  href="#top"
+                <Link
+                  to="/#top"
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-brand-white transition-colors hover:bg-primary-hover"
                 >
                   Back to top
                   <FiArrowRight />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+          <div className="grid gap-6 border border-primary/15 bg-bg-surface p-6 sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                Mobile app
+              </div>
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-text-main sm:text-4xl">
+                Download the app for the full experience.
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-text-muted sm:text-base">
+                The website gets people started, but the app handles most of the reporting, photo uploads, and follow-up.
+              </p>
+
+              <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 rounded-2xl border border-primary/15 bg-[#34A853] px-5 py-4 text-white transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#34A853]/20"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 ring-1 ring-inset ring-white/10">
+                    <FaGooglePlay className="text-3xl text-white" />
+                  </div>
+                  <div className="min-w-0 text-left">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75">
+                      Get it on
+                    </div>
+                    <div className="mt-1 text-lg font-black leading-none">
+                      Google Play
+                    </div>
+                    <div className="mt-1 text-xs font-medium text-white/75">
+                      Android devices
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 rounded-2xl border border-primary/15 bg-bg-sidebar px-5 py-4 text-brand-white transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/20"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/10">
+                    <FaAppStore className="text-3xl text-brand-white" />
+                  </div>
+                  <div className="min-w-0 text-left">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-white/75">
+                      Download on the
+                    </div>
+                    <div className="mt-1 text-lg font-black leading-none">
+                      App Store
+                    </div>
+                    <div className="mt-1 text-xs font-medium text-brand-white/75">
+                      iPhone and iPad
+                    </div>
+                  </div>
                 </a>
               </div>
+            </div>
+
+            <div className="grid gap-3 rounded-2xl border border-primary/15 bg-primary/5 p-5">
+              {[
+                'Report an issue in minutes from your phone',
+                'Add photos and exact location details',
+                'Track progress and updates on the go',
+              ].map((item) => (
+                <div key={item} className="rounded-xl border border-primary/15 bg-bg-surface px-4 py-3 text-sm text-text-main">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </section>
